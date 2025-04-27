@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static</title>
+</head>
+<body>
+    <h1>Static</h1>
+    <script>
+       /*  class ValidadorCPF{
+            static validar(tamanho){
+                if (tamanho == 11) {
+                    return true;
+                }
+                return false;
+            }
+        }; */
+
+        class ValidadorCPF{
+            static tamanho_CPF = 11;
+            static validar(tamanho) {
+                if (tamanho == this.tamanho_CPF) {
+                    return true;
+                }
+                return false;
+            };
+        };
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variavel Local</title>
+</head>
+
+<body>
+    <h1>Variavel Local</h1>
+
+
+    <script>
+        // "LET" Variavel local privado
+        class Pessoa {
+            constructor(nome, AnoDeNascimento, profissao) {
+                this.nome = nome;
+                this.AnoDeNascimento = AnoDeNascimento;
+                this.profissao = profissao;
+            };
+
+            ola() {
+                console.log("Olá, " + this.nome);
+            };
+
+            calcularidade() {
+                return new Date().getFullYear() - this.AnoDeNascimento;
+            };
+        };
+
+        const pessoa1 = new Pessoa("David", 2002, "Ti");
+        console.log(pessoa1);
+
+        class Estudante extends Pessoa {
+            #matricula;
+            constructor(nome, AnoDeNascimento, matricula) {
+                super(nome, AnoDeNascimento, "Estudante")
+                this.#matricula = matricula;
+
+            };
+            getMatricula() { // Retorna o valor da matricula -- get recebe valor
+                return this.#matricula;
+            };
+            setMatricula(valor) { // Altera Valor -- set
+                this.#matricula = valor;
+            }
+            ola() {
+                super.ola();
+                console.log("colegas!");
+            }
+
+
+        };
+
+
+        function Estagiario(NumeroContratoParam) {
+            let NumeroContrato = NumeroContratoParam;
+        }
+
+        const estagiario1 = new Estagiario();
+    </script>
+
+</body>
+
+</html>

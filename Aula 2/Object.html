@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+</head>
+
+<body>
+    <h1>
+        Object!
+    </h1>
+
+    <script>
+        function Pessoa() {
+            this.nome = ["David"];
+            this.anoDeNascimento = 2002;
+            this.profissao = ["Estudante"];
+            this.calculaIdade = function () {
+                return new Date().getFullYear() - this.anoDeNascimento;
+            }
+        };
+        const pessoa = new Pessoa();
+        console.log(Object.getPrototypeOf(pessoa))
+
+        // HERANÇA PROTOTIPADA
+        const pessoa2 = new Object();
+        const pessoa3 = Object.create(pessoa2);
+        const pessoa4 = Object.create(pessoa);
+        const pessoa5 = new Pessoa("Ântonia", 1983, "Professora");
+
+        pessoa.saudar = function () {
+            alert("Olá" + " " + pessoa.nome);
+            console.log("Olá");
+        };
+        Pessoa.prototype.saudar = function () {
+            console.log("Olá");
+        };
+    </script>
+
+</body>
+
+</html>
